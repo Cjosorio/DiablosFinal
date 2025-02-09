@@ -1,0 +1,433 @@
+/* Estilos generales */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Caviar Dreams Bold', sans-serif;
+    color: #000;
+    background-color: #fff;
+    overflow-x: hidden;
+    height: 100%; /* Asegura que el body ocupe toda la altura */
+    display: flex;
+    flex-direction: column; /* Organiza el contenido en columnas */
+}
+
+@font-face {
+    font-family: 'Caviar Dreams Bold';
+    src: url('fuentes/CaviarDreams_Bold.ttf') format('woff2'),
+         url('fuentes/CaviarDreams_Bold.ttf') format('woff'),
+         url('fuentes/CaviarDreams_Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Asegura que el header esté por encima del contenido */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%; /* Asegura que el nav ocupe el 100% del ancho disponible */
+}
+
+/* Menú en pantallas grandes (centrado) */
+.menu {
+    display: flex;
+    justify-content: center;  /* Centrado en pantallas grandes */
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%; /* Asegura que el contenedor ocupe todo el espacio disponible */
+}
+
+.menu li {
+    margin: 0 20px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Menú en pantallas pequeñas (alineado a la izquierda) */
+@media (max-width: 768px) {
+    nav {
+        justify-content: flex-start; /* Alinea el contenido a la izquierda en pantallas pequeñas */
+    }
+
+    .menu {
+        justify-content: flex-start; /* Alinea los items del menú a la izquierda */
+        width: auto; /* No ocupa todo el ancho disponible */
+    }
+
+    /* Estilo para el icono del menú hamburguesa */
+    .menu-icon {
+        display: block; /* Mostrar el ícono del menú en pantallas pequeñas */
+        font-size: 30px; /* Tamaño del ícono */
+        color: #fff; /* Color blanco */
+        cursor: pointer;
+    }
+}
+
+
+
+
+
+.logo img {
+    width: 100px;
+    height: auto;
+}
+
+/* Contenido principal */
+main {
+    flex: 1; /* Ocupa el espacio restante */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+/* Estilos generales para la sección */
+.portada {
+    position: relative;
+    width: 100%;
+    height: 50vh;  /* Esto hace que ocupe la mitad de la pantalla en altura (50% de la altura de la vista) */
+}
+
+/* Estilos para el contenedor de la imagen */
+.portada-img {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Estilos para la imagen */
+.portada-img img {
+    width: 100%;
+    height: 100%;  /* Asegura que la imagen ocupe todo el espacio disponible */
+    object-fit: cover;  /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+}
+
+/* Media query para dispositivos móviles (hasta 768px de ancho) */
+@media (max-width: 768px) {
+    .portada {
+        height: 50vh;  /* En dispositivos móviles, mantiene la altura en 50% de la pantalla */
+    }
+
+    .portada-img img {
+        object-fit: cover;  /* En dispositivos móviles, mantiene el comportamiento cubriendo el contenedor */
+    }
+}
+
+/* Media query para pantallas más grandes (por ejemplo, tabletas y escritorios) */
+@media (min-width: 769px) {
+    .portada {
+        height: 100vh;  /* En pantallas más grandes, cubre el 100% de la altura de la pantalla */
+    }
+
+    .portada-img img {
+        object-fit: cover;  /* En pantallas más grandes, cubre todo el contenedor sin recortar */
+    }
+}
+
+.videos {
+    background: linear-gradient(to right, #ffffff, #d3d3d3); /* Degradado blanco a gris */
+    padding: 20px 0;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center; /* Centra el video horizontalmente */
+    align-items: center; /* Centra el video verticalmente */
+    gap: 20px; /* Espacio entre los videos */
+    flex-wrap: nowrap; /* Impide que los videos se apilen verticalmente */
+    max-width: 500px; /* Establece un tamaño máximo para el contenedor */
+    margin: 0 auto; /* Centra el contenedor en la página */
+}
+
+video {
+    width: 200%; /* Hace que el video ocupe el 100% del contenedor */
+    height: auto; /* Mantiene la relación de aspecto */
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column; /* En pantallas pequeñas, el video se apila verticalmente */
+        align-items: center; /* Centra el video en pantallas pequeñas */
+        max-width: 90%; /* Hace que el contenedor se ajuste mejor en pantallas pequeñas */
+    }
+
+    video {
+        width: 100%; /* Hace que el video ocupe el 100% del contenedor */
+        max-width: 100%; /* Evita que el video se haga más grande de lo necesario */
+    }
+}
+
+
+.descripcion {
+    text-align: center;
+    margin-top: 20px;
+    padding: 0 20px; /* Añade padding para que el texto no toque los bordes */
+}
+
+.descripcion h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.descripcion p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000000;
+    color: white;
+}
+
+footer .footer-image-container img {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.cotizar-btn {
+    background-color: #ffffff;
+    color: #000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.cotizar-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Mostrar ícono de menú en móviles */
+    }
+
+    .menu {
+        display: none; /* Ocultar menú en móviles */
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    .menu.show {
+        display: flex; /* Mostrar menú al hacer clic */
+    }
+
+    .menu li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .descripcion h1 {
+        font-size: 2em;
+    }
+
+    .descripcion p {
+        font-size: 1em;
+    }
+
+    .footer-image-container img {
+        max-width: 100px;
+    }
+
+    .cotizar-btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+
+   /* Estilos para la animación del logo */
+   #logo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#logo {
+    width: 800px; /* Tamaño del logo */
+    animation: zoomInOut 2s infinite;
+}
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Estilos para la imagen */
+.image-container {
+    width: 100%; /* Ancho completo */
+    height: 640px; /* Altura ajustada del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border: 2px solid #000;
+    border-radius: 10px;
+}
+
+
+
+
+.image-container img {
+    width: 100%;  /* La imagen ocupa el 100% de la anchura del contenedor */
+    height: 100%; /* La imagen ocupa el 100% de la altura del contenedor */
+    object-fit: cover; /* Esto asegura que la imagen ocupe el espacio sin mantener la proporción */
+}
+
+.band-history {
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams Bold', sans-serif;
+}
+
+.band-history h2 {
+    font-size: 32px; /* Tamaño del título */
+    margin-bottom: 20px;
+}
+
+.band-history p {
+    line-height: 1.8; /* Espaciado entre líneas */
+    font-size: 20px; /* Tamaño del texto */
+    text-align: justify; /* Justificación del texto */
+}
+
+.band-history ul {
+    font-size: 20px; /* Tamaño del texto de la lista */
+    text-align: left; /* Alineación a la izquierda de la lista */
+    margin-top: 20px;
+}
+
+/* Estilos para las cards de los miembros */
+.band-members-cards {
+display: flex;
+justify-content: center; /* Centra las cartas */
+margin-top: 40px;
+gap: 5px; /* Espacio entre las cartas */
+margin-bottom: 40px; /* Añade espacio debajo de las cartas */
+max-width: 800px; /* Igual al max-width del texto */
+margin-left: auto; /* Centra el contenedor */
+margin-right: auto; /* Centra el contenedor */
+}
+
+.card {
+position: relative;
+width: 230px; /* Establece el mismo ancho para todas las cartas */
+height: 300px;
+overflow: hidden;
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición para la sombra y el tamaño */
+}
+
+.card img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.card:hover {
+transform: translateY(-10px); /* Eleva la carta hacia arriba */
+box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5); /* Aumenta la sombra en hover */
+}
+
+.card-info {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: rgba(0, 0, 0, 0.6);
+color: white;
+opacity: 0;
+transition: opacity 0.3s ease;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 10px;
+}
+
+.card:hover .card-info {
+opacity: 1;
+}
+
+.card-info h3 {
+margin: 10px 0;
+font-size: 24px;
+}
+
+.card-info p {
+font-size: 18px;
+}
+
+/* Estilos para los íconos sociales */
+/* Estilos para los íconos sociales en la parte derecha */
+.social-icons-right {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Coloca los iconos a la derecha */
+    transform: translateY(-50%);
+    display: flex;
+    gap: 15px; /* Espaciado entre los íconos */
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+}
+
+.social-icons-right a {
+    text-decoration: none;
+    color: #fff;
+    background-color: #000;
+    padding: 8px; /* Tamaño de los íconos */
+    border-radius: 50%;
+    font-size: 16px; /* Tamaño pequeño de los íconos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-icons-right a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
