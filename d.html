@@ -54,19 +54,38 @@
         }
 
         .band-history {
-            text-align: center;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            font-family: 'Caviar Dreams Bold', sans-serif;
-        }
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams Bold', sans-serif;
+}
 
-        @font-face {
+.band-history-text {
+    text-align: justify; /* Justifica el texto */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams', sans-serif; /* Fuente normal */
+    font-size: 18px; /* Tamaño de letra más grande, puedes ajustarlo según lo que necesites */
+    line-height: 1.6; /* Aumentamos la altura de línea para mejor legibilidad */
+}
+
+@font-face {
     font-family: 'Caviar Dreams Bold';
     src: url('fuentes/CaviarDreams_Bold.ttf') format('woff2'),
          url('fuentes/CaviarDreams_Bold.ttf') format('woff'),
          url('fuentes/CaviarDreams_Bold.ttf') format('truetype');
     font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('fuentes/CaviarDreams.ttf') format('woff2'),
+         url('fuentes/CaviarDreams.ttf') format('woff'),
+         url('fuentes/CaviarDreams.ttf') format('truetype'); /* Asegúrate de tener la versión normal */
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -251,11 +270,15 @@
             <!-- Historia de la banda -->
             <div class="band-history">
                 <h2>Dago Lozano</h2>
+            </div>
+            
+            <div class="band-history-text">
                 <p>Guitarrista ceibeño, comenzó a recibir clases de guitarra a los 14 años durante la secundaria. Desde muy temprana edad tuvo la visión de hacer de la música su profesión y viviendo en Tegucigalpa como estudiante adicionó para la legendaria banda de Rock Diablos Negros, convirtiéndose en su guitarrista desde 1991 hasta la actualidad.</p>
                 <p>Ha sido artista de SONY MUSIC INTERNACIONAL logrando colocar un video entre los 10 más pedidos de MTV, con giras por toda Honduras, Centroamérica, Estados Unidos y Europa. Ha grabado los 6 discos de Diablos Negros.</p>
                 <p>En el 2010 formó la banda LOS CUÑADOS DE TODOS que surge como un exitoso proyecto alterno con la idea de tocar todas esas canciones que fueron parte de su formación y que contribuyen a la pasión por la guitarra y por la música.</p>
                 <p>Dago Lozano fue elegido en el 2014 como guitarrista patrocinado por RITTENHOUSE GUITARS, compañía que le fabricó su guitarra custom signatura LA DIABLA.</p>
             </div>
+            
 
             <!-- Cards de los miembros -->
             <div class="band-members-cards">

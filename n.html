@@ -54,19 +54,38 @@
         }
 
         .band-history {
-            text-align: center;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            font-family: 'Caviar Dreams Bold', sans-serif;
-        }
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams Bold', sans-serif;
+}
 
-        @font-face {
+.band-history-text {
+    text-align: justify; /* Justifica el texto */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams', sans-serif; /* Fuente normal */
+    font-size: 18px; /* Tamaño de letra más grande, puedes ajustarlo según lo que necesites */
+    line-height: 1.6; /* Aumentamos la altura de línea para mejor legibilidad */
+}
+
+@font-face {
     font-family: 'Caviar Dreams Bold';
     src: url('fuentes/CaviarDreams_Bold.ttf') format('woff2'),
          url('fuentes/CaviarDreams_Bold.ttf') format('woff'),
          url('fuentes/CaviarDreams_Bold.ttf') format('truetype');
     font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('fuentes/CaviarDreams.ttf') format('woff2'),
+         url('fuentes/CaviarDreams.ttf') format('woff'),
+         url('fuentes/CaviarDreams.ttf') format('truetype'); /* Asegúrate de tener la versión normal */
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -249,13 +268,16 @@
                 <img src="imagenes/Nilo.jpg" alt="Imagen de la banda">
             </div>
 
-            <!-- Historia de la banda -->
             <div class="band-history">
                 <h2>Nilo Espinal</h2>
+            </div>
+            
+            <div class="band-history-text">
                 <p>Nilo Espinal es el vocalista principal de Diablos Negros. Con una potente voz y carisma en el escenario, ha sido una parte integral de la banda desde sus inicios.</p>
                 <p>Originario de Tegucigalpa, Honduras, Nilo comenzó su carrera musical desde joven, influenciado por diversas corrientes del rock y la música popular.</p>
                 <p>Con su energía y pasión por la música, Nilo ha llevado a Diablos Negros a numerosos escenarios nacionales e internacionales, compartiendo su arte con audiencias de todo el mundo.</p>
             </div>
+            
 
             <!-- Cards de los miembros -->
             <div class="band-members-cards">

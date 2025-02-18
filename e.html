@@ -54,19 +54,38 @@
         }
 
         .band-history {
-            text-align: center;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            font-family: 'Caviar Dreams Bold', sans-serif;
-        }
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams Bold', sans-serif;
+}
 
-        @font-face {
+.band-history-text {
+    text-align: justify; /* Justifica el texto */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams', sans-serif; /* Fuente normal */
+    font-size: 18px; /* Tamaño de letra más grande, puedes ajustarlo según lo que necesites */
+    line-height: 1.6; /* Aumentamos la altura de línea para mejor legibilidad */
+}
+
+@font-face {
     font-family: 'Caviar Dreams Bold';
     src: url('fuentes/CaviarDreams_Bold.ttf') format('woff2'),
          url('fuentes/CaviarDreams_Bold.ttf') format('woff'),
          url('fuentes/CaviarDreams_Bold.ttf') format('truetype');
     font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('fuentes/CaviarDreams.ttf') format('woff2'),
+         url('fuentes/CaviarDreams.ttf') format('woff'),
+         url('fuentes/CaviarDreams.ttf') format('truetype'); /* Asegúrate de tener la versión normal */
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -214,9 +233,13 @@
             <!-- Historia de la banda -->
             <div class="band-history">
                 <h2>Emilio Álvarez</h2>
+            </div>
+            
+            <div class="band-history-text">
                 <p>Con 40 años de experiencia continua en la escena musical, Emilio Álvarez ha participado activamente en el desarrollo de la cultura musical hondureña. Proviene de una familia Garífuna destacada en el mundo artístico por su amor y compromiso por el arte y la cultura.</p>
                 <p>Es reconocido por su versatilidad musical y su pasión por diversos géneros como blues, jazz, soul, rock, así como por la música tradicional de Honduras y la cultura musical Garífuna. A lo largo de su carrera artística, ha representado a Honduras en numerosos escenarios internacionales, incluyendo México (Festival Internacional Cervantino), Costa Rica (FIA, Festival Internacional de las Artes), Inglaterra (Festival BT River, Juegos Olímpicos Londres 2012), Holanda, Bélgica, Dinamarca, Polonia, Noruega, China, Suecia, Austria, Suiza, España (Santiago Compostela, festival WOMEX 2014), EE.UU., Australia, República Checa, El Salvador, Nicaragua, Guatemala, y Grecia Rolex Arts Festival 2023.</p>
             </div>
+            
 
             <!-- Cards de los miembros -->
             <div class="band-members-cards">

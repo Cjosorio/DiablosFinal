@@ -139,9 +139,10 @@ main {
 }
 
 .videos {
-    background: linear-gradient(to right, #ffffff, #d3d3d3); /* Degradado blanco a gris */
+    background: black; /* Fondo negro sólido */
     padding: 20px 0;
 }
+
 
 .video-container {
     display: flex;
@@ -402,23 +403,24 @@ font-size: 18px;
 
 /* Estilos para los íconos sociales */
 /* Estilos para los íconos sociales en la parte derecha */
+/* Estilo por defecto (cuando la orientación es vertical) */
 .social-icons-right {
     position: absolute;
     top: 50%;
-    right: 10px; /* Coloca los iconos a la derecha */
+    right: 10px;
     transform: translateY(-50%);
     display: flex;
-    gap: 15px; /* Espaciado entre los íconos */
-    z-index: 1000; /* Asegura que esté por encima del contenido */
+    gap: 15px;
+    z-index: 1000;
 }
 
 .social-icons-right a {
     text-decoration: none;
     color: #fff;
     background-color: #000;
-    padding: 8px; /* Tamaño de los íconos */
+    padding: 8px;
     border-radius: 50%;
-    font-size: 16px; /* Tamaño pequeño de los íconos */
+    font-size: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -428,6 +430,17 @@ font-size: 18px;
 .social-icons-right a:hover {
     background-color: #fff;
     color: #000;
+}
+
+/* Cuando el dispositivo esté en modo horizontal */
+@media (orientation: landscape) {
+    .social-icons-right {
+        top: 200%;  /* Baja los iconos un poco más (ajusta el porcentaje según prefieras) */
+        right: 20px;  /* Manténlos en el lado derecho */
+        transform: translateY(0);  /* Elimina la transformación de la posición vertical */
+        flex-direction: column;  /* Coloca los iconos en una columna */
+        gap: 10px;  /* Ajusta el espacio entre los iconos en modo horizontal */
+    }
 }
 
 

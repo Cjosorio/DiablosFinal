@@ -60,14 +60,23 @@
         }
 
         .band-history {
-            text-align: center;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            font-family: 'Caviar Dreams Bold', sans-serif;
-        }
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams Bold', sans-serif;
+}
 
-        
+.band-history-text {
+    text-align: justify; /* Justifica el texto */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams', sans-serif; /* Fuente normal */
+    font-size: 18px; /* Tamaño de letra más grande, puedes ajustarlo según lo que necesites */
+    line-height: 1.6; /* Aumentamos la altura de línea para mejor legibilidad */
+}
+
 @font-face {
     font-family: 'Caviar Dreams Bold';
     src: url('fuentes/CaviarDreams_Bold.ttf') format('woff2'),
@@ -76,6 +85,16 @@
     font-weight: bold;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('fuentes/CaviarDreams.ttf') format('woff2'),
+         url('fuentes/CaviarDreams.ttf') format('woff'),
+         url('fuentes/CaviarDreams.ttf') format('truetype'); /* Asegúrate de tener la versión normal */
+    font-weight: normal;
+    font-style: normal;
+}
+
 
         .band-history h2 {
             font-size: 32px; /* Tamaño del título */
@@ -256,12 +275,16 @@
             <!-- Historia de la banda -->
             <div class="band-history">
                 <h2>Historia de la Banda</h2>
-                <h1></p><center>Diablos Negros Honduras</center></h1>
+                <h1><center>Diablos Negros Honduras</center></h1>
+            </div>
+            
+            <div class="band-history-text">
                 <p>Grandeza es la mejor palabra para describir a los Diablos Negros y su impacto en el rock y cultura popular de la región centroamericana. Más de 40 años de carrera respaldan el legado que han construido como una de las primeras y mejores bandas de hard rock de Honduras y Centroamérica. Pueden ser tan románticos o pesados como se les dé la gana.</p>
                 <p>Desde hace más de tres décadas, las líricas y la música de Diablos Negros incluyen temas de diversa índole: una visión propia sobre la migración, las desigualdades sociales, la carencia de identidad local, la colonización de nuestros pueblos, la esperanza, el amor y otros temas que definen nuestra visión del mundo.</p>
                 <p>Diablos Negros es considerado en la región centroamericana como una de las bandas más sólidas y de culto, con apariciones en diversos espectáculos y festivales masivos.</p>
                 <p>Integrada por:</p>
             </div>
+            
 
             <!-- Cards de los miembros -->
             <div class="band-members-cards">

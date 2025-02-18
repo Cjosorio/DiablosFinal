@@ -54,19 +54,38 @@
         }
 
         .band-history {
-            text-align: center;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            font-family: 'Caviar Dreams Bold', sans-serif;
-        }
+    text-align: center;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams Bold', sans-serif;
+}
 
-        @font-face {
+.band-history-text {
+    text-align: justify; /* Justifica el texto */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Caviar Dreams', sans-serif; /* Fuente normal */
+    font-size: 18px; /* Tamaño de letra más grande, puedes ajustarlo según lo que necesites */
+    line-height: 1.6; /* Aumentamos la altura de línea para mejor legibilidad */
+}
+
+@font-face {
     font-family: 'Caviar Dreams Bold';
     src: url('fuentes/CaviarDreams_Bold.ttf') format('woff2'),
          url('fuentes/CaviarDreams_Bold.ttf') format('woff'),
          url('fuentes/CaviarDreams_Bold.ttf') format('truetype');
     font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Caviar Dreams';
+    src: url('fuentes/CaviarDreams.ttf') format('woff2'),
+         url('fuentes/CaviarDreams.ttf') format('woff'),
+         url('fuentes/CaviarDreams.ttf') format('truetype'); /* Asegúrate de tener la versión normal */
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -253,12 +272,16 @@
             <!-- Información de Carlos Cedeño -->
             <div class="band-history">
                 <h2>Carlos Cedeño</h2>
+            </div>
+            
+            <div class="band-history-text">
                 <p>Nació en La Ceiba, Honduras, el 1 de Junio de 1979, en una familia de músicos. Desde temprana edad estaba interesado en la percusión, con sólo 8 años de edad hizo su primer concierto en vivo en el Estadio Municipal de su ciudad natal. A los 14 años se trasladó a la ciudad de Tegucigalpa y emprendió una carrera musical.</p>
                 <p>Formó parte de bandas de todo tipo de géneros musicales y adquirió experiencia tanto en vivo como en estudio con bandas de renombre y solistas muy reconocidos en el ámbito nacional e internacional.</p>
                 <p>Ha compartido escenario con bandas internacionales como Enanitos Verdes, La Ley, Vilma Palma e Vampiros, Mana, Fobia, Café Tacuba, entre otros, y ha realizado giras por toda América Central, América del Sur, Estados Unidos, Europa y China.</p>
                 <p>Actualmente es el baterista de una de las bandas más importantes de Centroamérica, “Diablos Negros”, y también es parte de El Dúo Los Tres, que está por lanzar nuevos materiales discográficos. Además, ha sido parte de Coco Bar, una banda con una propuesta instrumental que ha tenido la oportunidad de presentarse en escenarios de renombre internacional como WOMEX.</p>
                 <p>Carlos Cedeño también cuenta con su propio estudio de grabación, especializado en la captación en vivo de baterías, siendo el único lugar en Honduras con esta especialización.</p>
             </div>
+            
 
             <!-- Después de la información de Carlos Cedeño -->
 
