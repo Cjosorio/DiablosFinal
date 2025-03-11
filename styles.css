@@ -202,15 +202,6 @@ footer .footer-image-container img {
     margin-bottom: 20px;
 }
 
-footer p {
-    margin: 10px 0;  /* Esto asegura que haya un margen consistente entre cada párrafo */
-    line-height: 1.6; /* Ajusta la altura de la línea dentro de los párrafos para más espacio */
-}
-
-footer a {
-    text-decoration: none;
-}
-
 .cotizar-btn {
     background-color: #ffffff;
     color: #000;
@@ -224,7 +215,7 @@ footer a {
 .cotizar-btn:hover {
     background-color: #000;
     color: #fff;
-}
+} 
 
 
 /* Media Queries para dispositivos móviles */
