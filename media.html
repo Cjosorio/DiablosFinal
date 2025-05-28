@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diablos Negros</title>
+    <title>Media - Diablos Negros</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
         /* Estilos para la animación del logo */
         #logo-overlay {
@@ -22,7 +23,7 @@
         }
 
         #logo {
-            width: 800px; /* Tamaño del logo */
+            width: 800px;
             animation: zoomInOut 2s infinite;
         }
 
@@ -39,63 +40,207 @@
         body {
             background-color: #000;
             color: #fff;
-            font-family: 'Caviar Dreams Bold', sans-serif;
+            font-family: 'Bebas Neue', sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Asegura que el body ocupe toda la altura de la ventana */
+            min-height: 100vh;
+            letter-spacing: 1px;
         }
 
         main {
-            flex: 1; /* Esto hace que el contenido principal ocupe el espacio disponible */
+            flex: 1;
         }
 
         footer {
-            margin-top: auto; /* Empuja el footer hacia el final de la página */
+            margin-top: auto;
             text-align: center;
             padding: 20px;
-            background-color: #000000;
+            background-color: #000;
+            border-top: 2px solid #333;
         }
 
         .logo-link img {
             width: 100px;
             height: auto;
             vertical-align: middle;
+            filter: grayscale(100%);
         }
 
         footer .footer-image-container img {
             max-width: 200px;
             margin-bottom: 20px;
+            filter: grayscale(100%);
         }
 
-        /* Estilos para la galería */
-        .gallery {
+        footer p {
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            margin: 5px 0;
+        }
+
+        footer a button {
+            background-color: #fff;
+            color: #000;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        footer a button:hover {
+            background-color: #666;
+            color: #fff;
+        }
+
+        /* Estilos para las secciones de videos e imágenes */
+        .media-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .media-section h2 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            position: relative;
+        }
+
+        .media-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: #fff;
+            opacity: 0.7;
+        }
+
+        /* Estilos para la galería de videos */
+        .video-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .video-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+            background-color: #111;
+            transition: transform 0.3s ease;
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            filter: grayscale(50%);
+            transition: filter 0.3s ease;
+        }
+
+        .video-item:hover iframe {
+            filter: grayscale(0%);
+        }
+
+        .video-item .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .video-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .video-item:hover {
+            transform: scale(1.05) rotate(1deg);
+            animation: shake 0.5s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0) rotate(1deg); }
+            25% { transform: translateX(-5px) rotate(0deg); }
+            75% { transform: translateX(5px) rotate(2deg); }
+        }
+
+        /* Estilos para la galería de imágenes */
+        .image-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 50px;
-            padding: 100px;
-            max-width: 1000px;  /* Esto asegura que la galería no sea más grande que 1200px de ancho */
-            margin: 0 auto;  /* Centra el contenedor en la página */
+            gap: 20px;
+            padding: 20px;
         }
 
         .gallery-item {
             position: relative;
             overflow: hidden;
+            border-radius: 0;
+            background-color: #111;
+            transition: transform 0.3s ease;
             cursor: pointer;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(235, 234, 234, 0.5); /* Efecto de luz LED */
         }
 
         .gallery-item img {
             width: 100%;
             height: auto;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease, transform 0.3s ease;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAAXNSR0IArs4c6QAAABJJREFUCB1jYGBgYGBgYGBgYGBgYGSAACoBAH4qCQIAAAAASUVORK5CYII=') repeat;
+            background-blend-mode: overlay;
         }
 
-        .gallery-item img:hover {
+        .gallery-item:hover img {
+            filter: grayscale(0%);
             transform: scale(1.1);
-            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(1deg);
+            animation: shake 0.5s;
         }
 
         /* Estilos para el modal */
@@ -107,7 +252,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.95);
             padding: 20px;
             box-sizing: border-box;
             text-align: center;
@@ -127,6 +272,7 @@
             height: auto;
             display: block;
             margin: auto;
+            filter: grayscale(50%);
         }
 
         .close {
@@ -137,6 +283,11 @@
             font-size: 35px;
             font-weight: bold;
             cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: #666;
         }
 
         /* Estilos para el carrusel */
@@ -157,9 +308,12 @@
             color: #fff;
             font-weight: bold;
             font-size: 30px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            background-color: rgba(0, 0, 0, 0.5);
+            transition: color 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev:hover, .next:hover {
+            color: #666;
         }
 
         .prev {
@@ -168,7 +322,6 @@
 
         .next {
             right: 0;
-            border-radius: 3px 0 0 3px;
         }
 
         /* Miniaturas */
@@ -197,57 +350,99 @@
         .thumbnail-item img {
             width: 100px;
             height: auto;
-            border-radius: 5px;
+            filter: grayscale(100%);
         }
 
-        /* Estilos específicos para la información de conciertos */
-        .overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
-            border-radius: 8px; /* Ajusta según sea necesario */
+        /* Header y navegación */
+        header nav {
+            background-color: #000;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #333;
         }
 
-        .gallery-item:hover .overlay {
-            opacity: 1;
+        .menu-icon {
+            color: #fff;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu li {
+            margin: 0 15px;
+        }
+
+        .menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .menu li a:hover {
+            color: #666;
+        }
+
+        .social-icons-right a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons-right a:hover {
+            color: #666;
         }
 
         /* Responsividad */
         @media (max-width: 768px) {
-            .gallery {
+            .media-section h2 {
+                font-size: 2rem;
+            }
+
+            .video-gallery, .image-gallery {
                 grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 10px;
+                gap: 15px;
                 padding: 10px;
             }
 
-            .overlay {
-                font-size: 14px;
+            .video-item iframe {
+                height: 150px;
+            }
+
+            .video-item .overlay, .gallery-item .overlay {
+                font-size: 1.2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .gallery {
+            .media-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .video-gallery, .image-gallery {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 5px;
+                gap: 10px;
                 padding: 5px;
             }
 
-            .overlay {
-                font-size: 12px;
+            .video-item iframe {
+                height: 100px;
             }
 
-            footer {
-                font-size: 14px;
-                padding: 10px;
+            .video-item .overlay, .gallery-item .overlay {
+                font-size: 1rem;
+                padding: 8px;
             }
         }
     </style>
@@ -257,6 +452,7 @@
     <div id="logo-overlay">
         <img id="logo" src="imagenes/logo2.png" alt="Logo de la banda">
     </div>
+
     <!-- Header -->
     <header>
         <nav>
@@ -264,7 +460,7 @@
             <div class="menu-icon" id="menu-icon">
                 <i class="fas fa-bars"></i>
             </div>
-    
+
             <!-- Menú principal -->
             <ul class="menu" id="menu">
                 <li><a href="banda.html">BANDA</a></li>
@@ -277,7 +473,7 @@
                 <li><a href="media.html">MEDIA</a></li>
                 <li><a href="tienda.html">TIENDA</a></li>
             </ul>
-    
+
             <!-- Íconos sociales en la parte derecha -->
             <div class="social-icons-right">
                 <a href="https://www.facebook.com/diablosnegroshn" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -288,33 +484,66 @@
         </nav>
     </header>
 
-    <!-- Galería de conciertos -->
+    <!-- Contenido principal -->
     <main>
-        <div class="gallery">
-            <div class="gallery-item" onclick="openModal('concert1')">
-                <img src="imagenes/Perfil Emilio 01.jpg" alt="Concierto 1">
-                <div class="overlay">Tegucigalpa, 17 de noviembre 2024</div>
+        <!-- Sección de videos -->
+        <section class="media-section">
+            <h2>Videos</h2>
+            <div class="video-gallery">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/UmkwGbYSOaY" title="Diablos Negros - Por Los Viejos Tiempos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                    <div class="overlay">Diablos Negros - Por Los Viejos Tiempos</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/7PAzY6TPItw" title="Diablos Negros - El Migrante" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                    <div class="overlay">Diablos Negros - El Migrante</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/PVciVARNiw0" title="Diablos Negros Unplugged - No me lastimes" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                    <div class="overlay">Diablos Negros Unplugged - No me lastimes</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/JaNBZpaF5Ro" title="Solo Carlos Cedeño Diablos Negros Unplugged" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                    <div class="overlay">Solo Carlos Cedeño Diablos Negros Unplugged</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/SND4-HkNhiY" title="Backstage - Dago Lozano" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                    <div class="overlay">Backstage - Dago Lozano</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/lFJkUaz65tg" title="Backstage Carlos Cedeño" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+                    <div class="overlay">Backstage Carlos Cedeño</div>
+                </div>
             </div>
+        </section>
 
-            <div class="gallery-item" onclick="openModal('concert2')">
-                <img src="imagenes/Perfil Carlos 01.jpg" alt="Concierto 2">
-                <div class="overlay">San Pedro Sula, 22 de noviembre 2024</div>
+        <!-- Sección de imágenes -->
+        <section class="media-section">
+            <h2>Imágenes</h2>
+            <div class="image-gallery">
+                <div class="gallery-item" onclick="openModal('concert1')">
+                    <img src="imagenes/Perfil Emilio 01.jpg" alt="Concierto 1">
+                    <div class="overlay">Tegucigalpa, 17 de noviembre 2024</div>
+                </div>
+                <div class="gallery-item" onclick="openModal('concert2')">
+                    <img src="imagenes/Perfil Carlos 01.jpg" alt="Concierto 2">
+                    <div class="overlay">San Pedro Sula, 22 de noviembre 2024</div>
+                </div>
+                <div class="gallery-item" onclick="openModal('concert3')">
+                    <img src="imagenes/Perfil Dago 01.jpg" alt="Concierto 3">
+                    <div class="overlay">La Ceiba, 1 de diciembre 2024</div>
+                </div>
             </div>
-
-            <div class="gallery-item" onclick="openModal('concert3')">
-                <img src="imagenes/Perfil Dago 01.jpg" alt="Concierto 3">
-                <div class="overlay">La Ceiba, 1 de diciembre 2024</div>
-            </div>
-        </div>
+        </section>
     </main>
 
     <!-- Modal para mostrar las imágenes -->
     <div id="myModal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
+        <span class="close" onclick="closeModal()">×</span>
         <div class="modal-content">
             <div class="carousel">
-                <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
-                <div class="next" onclick="plusSlides(1)">&#10095;</div>
+                <div class="prev" onclick="plusSlides(-1)">❮</div>
+                <div class="next" onclick="plusSlides(1)">❯</div>
                 <div id="carousel-content"></div>
             </div>
             <div class="thumbnail-container" id="thumbnail-container"></div>
@@ -326,7 +555,7 @@
         <div class="footer-image-container">
             <img src="imagenes/logo3.jpg" alt="Logo Footer" class="footer-image">
         </div>
-        <p>&copy; 2025 Diablos Negros.</p>
+        <p>© 2025 Diablos Negros.</p>
         <p>Contáctanos: diablosnegrosrock@gmail.com</p>
         <p>
             Realizado Por:
@@ -335,9 +564,7 @@
             </a>
         </p>
         <a href="https://vanguardiaproducciones.hn/diablos_negros/?fbclid=IwY2xjawHk8TFleHRuA2FlbQIxMAABHRlTAdL--R2wsgKCAvsBT8thyeh3nls6rKghGIh4eWq-6cz7UhmfyDSDNQ_aem_wDSbTrU1weFrfn7dqM7BIA" target="_blank">
-            <button style="background-color: #ffffff; color: #000; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-                Cotizar
-            </button>
+            <button>Cotizar</button>
         </a>
     </footer>
 
@@ -351,7 +578,7 @@
                 'imagenes/Dago.jpg'
             ],
             concert2: [
-                'imagenes/Perfil CArlos.jpg',
+                'imagenes/Perfil Carlos.jpg',
                 'imagenes/Perfil Dago 01.jpg',
                 'imagenes/Perfil Dago 02.jpg',
                 'imagenes/Perfil Emilio.jpg',
@@ -365,6 +592,8 @@
             ]
         };
 
+        let currentIndex = 0;
+
         function openModal(concertId) {
             const modal = document.getElementById("myModal");
             const carouselContent = document.getElementById("carousel-content");
@@ -373,79 +602,83 @@
 
             modal.style.display = "block";
             carouselContent.innerHTML = '';
+            thumbnailContainer.innerHTML = '';
 
             images.forEach((imageSrc, index) => {
                 const imageElement = document.createElement("img");
                 imageElement.src = imageSrc;
                 imageElement.classList.add("modal-img");
-                imageElement.setAttribute("data-index", index);
-                if (index === 0) imageElement.classList.add("active");
+                imageElement.style.display = index === 0 ? "block" : "none";
                 carouselContent.appendChild(imageElement);
 
-                // Thumbnail
                 const thumbnailElement = document.createElement("div");
                 thumbnailElement.classList.add("thumbnail-item");
-                thumbnailElement.onclick = function() { currentSlide(index); };
+                if (index === 0) thumbnailElement.classList.add("active");
+                thumbnailElement.onclick = () => currentSlide(index);
 
                 const thumbnailImage = document.createElement("img");
                 thumbnailImage.src = imageSrc;
                 thumbnailElement.appendChild(thumbnailImage);
-
                 thumbnailContainer.appendChild(thumbnailElement);
             });
 
-            // Set the current slide
-            let currentIndex = 0;
-
-            function currentSlide(index) {
-                const slides = carouselContent.getElementsByClassName("modal-img");
-                const thumbnails = thumbnailContainer.getElementsByClassName("thumbnail-item");
-
-                Array.from(slides).forEach(slide => slide.classList.remove("active"));
-                Array.from(thumbnails).forEach(thumb => thumb.classList.remove("active"));
-
-                slides[index].classList.add("active");
-                thumbnails[index].classList.add("active");
-                currentIndex = index;
-            }
-
-            function plusSlides(n) {
-                let slides = carouselContent.getElementsByClassName("modal-img");
-                let newIndex = currentIndex + n;
-
-                if (newIndex < 0) newIndex = slides.length - 1;
-                if (newIndex >= slides.length) newIndex = 0;
-
-                currentSlide(newIndex);
-            }
-
-            window.plusSlides = plusSlides;
+            currentIndex = 0;
         }
 
         function closeModal() {
             const modal = document.getElementById("myModal");
             modal.style.display = "none";
         }
-    </script>
-        <script>
-            // Ocultar el logo después de la animación y mostrar el contenido principal
-            window.addEventListener('load', () => {
-                setTimeout(() => {
-                    document.getElementById('logo-overlay').style.display = 'none';
-                    document.querySelectorAll('header, .social-icons, main, footer').forEach(el => {
-                        el.style.display = '';
-                    });
-                }, 1000); // Duración de la animación (en ms)
+
+        function plusSlides(n) {
+            const slides = document.getElementsByClassName("modal-img");
+            const thumbnails = document.getElementsByClassName("thumbnail-item");
+            currentIndex += n;
+
+            if (currentIndex < 0) currentIndex = slides.length - 1;
+            if (currentIndex >= slides.length) currentIndex = 0;
+
+            Array.from(slides).forEach((slide, i) => {
+                slide.style.display = i === currentIndex ? "block" : "none";
             });
-        </script>
+            Array.from(thumbnails).forEach((thumb, i) => {
+                thumb.classList.toggle("active", i === currentIndex);
+            });
+        }
 
-<script>
-    const menuIcon = document.getElementById('menu-icon');
-    const menu = document.getElementById('menu');
+        function currentSlide(index) {
+            currentIndex = index;
+            const slides = document.getElementsByClassName("modal-img");
+            const thumbnails = document.getElementsByClassName("thumbnail-item");
 
-    menuIcon.addEventListener('click', () => {
-        menu.classList.toggle('show');
-    });
-</script>
+            Array.from(slides).forEach((slide, i) => {
+                slide.style.display = i === index ? "block" : "none";
+            });
+            Array.from(thumbnails).forEach((thumb, i) => {
+                thumb.classList.toggle("active", i === index);
+            });
+        }
+
+        window.plusSlides = plusSlides;
+        window.closeModal = closeModal;
+
+        // Ocultar el logo después de la animación y mostrar el contenido principal
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('logo-overlay').style.display = 'none';
+                document.querySelectorAll('header, .social-icons-right, main, footer').forEach(el => {
+                    el.style.display = '';
+                });
+            }, 1000);
+        });
+
+        // Menú hamburguesa
+        const menuIcon = document.getElementById('menu-icon');
+        const menu = document.getElementById('menu');
+
+        menuIcon.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
