@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    <script src="https://apis.google.com/js/platform.js"></script>
     <style>
         /* Estilos para la animación del logo */
         #logo-overlay {
@@ -100,52 +99,6 @@
             height: 4px;
             background-color: #fff;
             opacity: 0.7;
-        }
-
-        /* Estilos para el botón de suscripción */
-        .subscribe-button {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-            background-color: #111;
-            padding: 10px;
-            border-radius: 0;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .subscribe-button:hover {
-            transform: scale(1.05) rotate(1deg);
-            animation: shake 0.5s;
-        }
-
-        .subscribe-button .g-ytsubscribe {
-            filter: grayscale(50%);
-            transition: filter 0.3s ease;
-        }
-
-        .subscribe-button:hover .g-ytsubscribe {
-            filter: grayscale(0%);
-        }
-
-        .subscribe-button .overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 10px;
-            text-align: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.5rem;
-            text-transform: uppercase;
-        }
-
-        .subscribe-button:hover .overlay {
-            opacity: 1;
         }
 
         /* Estilos para la galería de videos */
@@ -393,7 +346,7 @@
                 height: 150px;
             }
 
-            .video-item .overlay, .gallery-item .overlay, .subscribe-button .overlay {
+            .video-item .overlay, .gallery-item .overlay {
                 font-size: 1.2rem;
             }
         }
@@ -413,7 +366,7 @@
                 height: 100px;
             }
 
-            .video-item .overlay, .gallery-item .overlay, .subscribe-button .overlay {
+            .video-item .overlay, .gallery-item .overlay {
                 font-size: 1rem;
                 padding: 8px;
             }
@@ -461,11 +414,6 @@
     <main>
         <!-- Sección de videos -->
         <section class="media-section">
-            <!-- Botón de suscripción -->
-            <div class="subscribe-button">
-                <div class="g-ytsubscribe" data-channelid="@diablosnegrostv" data-layout="full" data-theme="dark" data-count="default"></div>
-                <span class="overlay">Suscribite</span>
-            </div>
             <h2>Videos</h2>
             <div class="video-gallery">
                 <div class="video-item">
@@ -495,14 +443,6 @@
                 <div class="video-item">
                     <iframe src="https://www.youtube.com/embed/wXZY24ppCsw" title="Diablos Negros- NOCHES PAGANAS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
                     <div class="overlay">Diablos Negros- NOCHES PAGANAS</div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/xk8Adu2B0bw" title="Diablos Negros- DESTINOS UNPLUGGED" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                    <div class="overlay">Diablos Negros- DESTINOS UNPLUGGED</div>
-                </div>
-                <div class="video-item">
-                    <iframe src="https://www.youtube.com/embed/xJOGxH1i0WQ" title="CONOCE NUESTRA HISTORIA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
-                    <div class="overlay">CONOCE NUESTRA HISTORIA</div>
                 </div>
             </div>
         </section>
